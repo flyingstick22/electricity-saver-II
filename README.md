@@ -1,4 +1,5 @@
-# Control your electrical loads with GCP based on current electricity price in Finland
+# Control your electrical loads using GCP, Python and Shelly relay based on hourly electricity prices in Finland
+...
 
 ## Intro
 This app is ...
