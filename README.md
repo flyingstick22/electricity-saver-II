@@ -14,10 +14,12 @@ In this demo, we are using [Shelly pro 4PM](https://www.shelly.cloud/knowledge-b
 3. Activate authorization for cloud key, copy it as well as server name. You'll need these information in the next step
 
 
-## spot_shelly.py file modifications
+## Deploy to Google Cloud Platform (GCP)
+Check [this](https://www.youtube.com/watch?v=lIJlhKrP_SI) tutorial from Algovibes how to run Python in GCP environment. As soon as your Linux Debian virtual machine is installed with Miniconda environment 
 
+1. Open nano text editor by typing command line: nano my_spot_script.py
+2. Copy the script  
 
-## deploy to Google Cloud Platform (GCP)
-Check this tutorial how to activate GCP environment. You should receive 300$ for 90 days and this script is using maybe 5$/month when selecting lowest possible virtual machine. As soon as your Linux Debian machine is up and running look this tutorial how to automate script using "Crontab". Crontab enables script automatization and logging and here are examples about syntax with different time intervals. The spot price is changed every hour 
+look this tutorial how to automate script using "Crontab". Crontab enables script automatization and logging and here are examples about syntax with different time intervals. The spot price is changed every hour 
 
 ## Summary
