@@ -10,9 +10,9 @@ This project requires beginner level knowledge about programming and is meant fo
 In this demo, we are using [Shelly pro 4PM](https://www.shelly.cloud/knowledge-base/devices/shelly-pro-4pm/) and its first relay output (ID = 0). You can select your own prefered Shelly relay model and expand the script for different or multiply outputs of course. **Electrical installation belongs to professional so ask your electrician to do your Shelly installation.** 
 
 1. connect Shelly to your home network and make basic comissioning with [Shelly Cloud App](https://www.shelly.cloud/support/cloud-connected/)
-2. open the app (web or mobile) and find your relay "device ID" number (device --> settings --> device ID).
-3. activate authorization for cloud key
-4. copy your cloud key and your server name. You'll need this information in the next step
+2. open the app (web or mobile) and copy your relay "DEVICE ID" (Click the device --> Settings --> Device Information --> DEVICE ID).
+3. activate the cloud key (User Settings --> Authorization Cloud Key)
+4. copy your cloud key and your server name. You'll need this information in the next steps
 
 ## Deploying script to Google Cloud Platform (GCP)
 Check [this](https://www.youtube.com/watch?v=lIJlhKrP_SI) tutorial from Algovibes how to run Python in GCP environment. As soon as your Linux Debian virtual machine is installed with Miniconda environment: 
@@ -31,6 +31,8 @@ Great. If you see the output above we are almost there :thumbsup:
 
 ### Crontab
 
-Contab is a file that allows us to automate scripts in Linux (and other) environment. This is really handy feature in project like this because we need to run the script every hour and check if current electricity price is lower than our limit price. In addition, it also allows to save logs to a txt file. First. Look this tutorial how to automate script using "Crontab". 
+Contab is a file that allows to automate scripts in Linux (and other) environment. This is a great feature in project like this because we need to run the script every hour and check if current electricity price is lower than limit price we set. In addition, it also allows to save logs to a text file. First. Look [this](https://www.youtube.com/watch?v=kjrC1N8K8MI) tutorial from Algovibes how to automate the script using "Crontab". 
+
+If you want to run the script once every hour use following syntax: ```` 0 * * * * /your/file/path/here/ my_spot_script.py >> history.txt ````
 
 ## Summary
