@@ -33,6 +33,6 @@ Great. If you see the output above we are almost there :thumbsup:
 
 Contab is a file that allows to automate scripts in Linux (and other) environment. This is a great feature in project like this because we need to run the script every hour and check if current electricity price is lower than limit price we set. In addition, it also allows to save logs to a text file. First. Look [this](https://www.youtube.com/watch?v=kjrC1N8K8MI) tutorial from Algovibes how to automate the script using "Crontab". 
 
-If you want to run the script once every hour use following syntax: ```` 0 * * * * /your/file/path/here/ my_spot_script.py >> history.txt ````
+If you want to run the script once every hour use following syntax: ```` 0 * * * * home/username/miniconda3/bin/python my_spot_script.py >> history.txt ````
 
 ## Summary
