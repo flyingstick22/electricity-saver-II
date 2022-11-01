@@ -4,10 +4,10 @@ This is a cloud based load control solution for Finnish residents (with a spot-p
 ## Intro
 This simple Python project is an evolution from electricity-saver-I project. In this project, we are not using any local machines (computers) to run scripts thus deploying our code directly in Google Cloud Platform (GCP). Our Shelly relay is controlled via (Google) cloud - (Shelly) cloud connection and  we are requesting electricity prices via this new [API]( https://api.spot-hinta.fi/swagger/ui/#/Pörssihinnat%20tänään%20-%20hinta%20ja%20kuluvan%20tunnin%20'rank'/JustNow) (prices only for Finland, sorry..). This makes script simpler because we do not need to work with raw data or with ENTSO-E API key as in "electricity-saver-I" project. 
 
-This project requires beginner level knowledge about programming & linux environments and is meant for people who are intrested smart homes and maybe using already Shelly relays in their home.
+This project requires beginner level knowledge of programming & Linux environments and is meant for people who are intrested smart homes and maybe using already Shelly relays in their home.
 
 ## Let's get started
-In this demo, we are using [Shelly pro 4PM](https://www.shelly.cloud/knowledge-base/devices/shelly-pro-4pm/) and its first relay output (ID = 0). You can select your own prefered Shelly relay model and expand the script for different or multiply outputs of course. **Note that this kind of electrical installation requires an electrician in Finland so ask your local electrician to do your Shelly installation/wiring.** 
+In this demo, we are using [Shelly pro 4PM](https://www.shelly.cloud/knowledge-base/devices/shelly-pro-4pm/) and its first relay output (ID = 0). You can select your own prefered Shelly relay model and expand the script for different or multiply outputs of course. **Note that this kind of electrical installation must be carried out by a professional (= electrician) in Finland so ask your local electrician to do your Shelly installation/wiring.** 
 
 1. connect Shelly to your home network and make basic comissioning with [Shelly Cloud App](https://www.shelly.cloud/support/cloud-connected/)
 2. open the app (web or mobile) and copy your relay "DEVICE ID" (Click the device --> Settings --> Device Information --> DEVICE ID).
@@ -19,13 +19,13 @@ Check [this](https://www.youtube.com/watch?v=lIJlhKrP_SI) tutorial from Algovibe
 
 5. open nano text editor by typing command line: ```` nano my_spot_script.py ````
 6. copy the python script from the repository and paste it to nano editor
-7. modify following parameters based on your device: DEVICE ID, cloud key, server name
+7. modify following parameters based on your device: DEVICE_ID, CLOUD_KEY, SERVER_NAME
 7. close the file by pressing ctrl + x
-8. press y (= saving yes) and press enter to save the file and exit 
+8. press y (= saving yes) and press enter to save and exit 
 
-you can test that your script is working by typing command line: ```` python my_spot_script.py ````
+Test that your script is working by typing command line: ```` python my_spot_script.py ````
 
-You should see something like this: ````29-10-2022,08:54,*your_device_id*,True,0.0161,0.2,True```` which is a log file we are going to save for future use. It contains following information: date, UTC time, device ID, Shelly cloud connection is OK (true/false), hour price in kWh with taxes, my limit price in kWh, relay is ON (true/false)?
+You should see something like this: ````29-10-2022,08:54,*your_device_id*,True,0.0161,0.2,True```` which is a log file we are going to save for the future use. It contains following information: date, UTC time, device ID, Shelly cloud connection is OK (true/false), hour price in kWh with taxes, my limit price in kWh, relay is ON (true/false)?
 
 Great. If you see the output above we are almost there :thumbsup:
 
@@ -43,7 +43,10 @@ Then comes a path to your Python installation. This you will find by typing: ```
 
 ## Summary
 
-This project was deployed using GCP but you can also choose other cloud platforms out there. Using this kind of cloud service comes with a cost but selecting smallest virtual machine available costs should stay under 10 € / month, easily. Google is giving 300$ for three months for free at present (Nov. 2022) so testing the system should not generate any costs.
+This project was deployed in GCP. Using a cloud service comes with a cost but selecting smallest virtual machine available costs should stay under 10 € / month. Google is giving three months free tier (300 $) so testing the system should not generate any costs. Second. Controlling your electrical loads via (two) clouds is exposing your system more for possible cyber attacks comparing local machine running in the local network. If you want to go more secure go for electricity-saver-I approach. Evaluate risks in your case and make the call.
 
-Second. Controlling your electrical loads via (two) clouds and using automation increases risks comparing local machine running in the local network. If you wnat to have more secure system go for electricity-saver-I.
+That's it. Happy scripting!
+
+
+
 
