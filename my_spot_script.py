@@ -7,7 +7,7 @@ import requests
 import json
 from datetime import datetime
 
-#Type your own device/system parameters here:
+#Type your own Shelly device/system parameters here:
 DEVICE_ID = "1234567abcef"
 CLOUD_KEY = "1234567890abcdefghijklmn..."
 SERVER = "https://shelly-..............."
@@ -18,12 +18,12 @@ def main():
 
     # get current price from api.spot-hinta.fi
     response_api = requests.get("https://api.spot-hinta.fi/JustNow")
-    price_now= response_api.json()
+    price_now = response_api.json()
     price_now_with_taxes = float(price_now['PriceWithTax'])
 
     #Shelly controls via Cloud
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-    output = "0"    # This output is controlled (e.g. Shelly pro 4PM has four relays with output ID's 0,1,2,3. 0 = relay 1, 3 = relay 4 ) 
+    output = "0"    # This relay is controlled (e.g. Shelly pro 4PM has four relays with output ID's 0,1,2,3. 0 = relay 1, 3 = relay 4 ) 
     
     if price_now_with_taxes <= my_limit_price:
         control = f"id={DEVICE_ID}&auth_key={CLOUD_KEY}&channel={output}&turn=on"
@@ -38,7 +38,7 @@ def main():
     date = datetime.today().strftime('%d-%m-%Y')
     time = datetime.today().strftime('%H:%M')
 
-    # Getting device status and ID
+    # Getting device status and information for future use (history.txt file)
     data = f"id={DEVICE_ID}&auth_key={CLOUD_KEY}"
     response= requests.post(f"{SERVER}/device/status", data, headers=headers)
     device_status = response.json()
