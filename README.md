@@ -2,9 +2,9 @@
 This is a cloud based load control solution for Finnish residents (with a spot-price contract) who would like to reduce their electricity bill
 
 ## Intro
-This simple Python project is an evolution from electricity-saver-I project. In this project, we are not using any local machines (computers) to run scripts thus deploying our code directly in Google Cloud Platform (GCP). Our Shelly relay is controlled via (Google) cloud - (Shelly) cloud connection and  we are requesting electricity prices via this new [API]( https://api.spot-hinta.fi/swagger/ui/#/Pörssihinnat%20tänään%20-%20hinta%20ja%20kuluvan%20tunnin%20'rank'/JustNow) (prices only for Finland, sorry..). This makes script simpler because we do not need to work with raw data or with ENTSO-E API key as in "electricity-saver-I" project.
+This simple Python project is an evolution from electricity-saver-I project. In this project, we are not using any local computers to run scripts thus deploying our code directly in Google Cloud Platform (GCP). Our Shelly relay is controlled via (Google) cloud - (Shelly) cloud connection and  we are requesting electricity prices via this new [API]( https://api.spot-hinta.fi/swagger/ui/#/Pörssihinnat%20tänään%20-%20hinta%20ja%20kuluvan%20tunnin%20'rank'/JustNow) (prices only for Finland, sorry..). This makes script simpler because we do not need to work with raw data or with ENTSO-E API key as in "electricity-saver-I" project.
 
-<img src="/images/architecture.jpg" width="500">
+<img src="/images/architecture.jpeg" width="500">
 
 This project requires beginner level knowledge of programming & Linux environments and is meant for people who are intrested smart homes and maybe using already Shelly relays in their home.
 
@@ -22,7 +22,7 @@ Check [this](https://www.youtube.com/watch?v=lIJlhKrP_SI) tutorial from Algovibe
 
 5. open nano text editor by typing command line: ```` nano my_spot_script.py ````
 6. copy the python script from the repository and paste it to nano editor
-7. modify following parameters based on your device: DEVICE_ID, CLOUD_KEY, SERVER_NAME
+7. modify following parameters in the script based on your device: DEVICE_ID, CLOUD_KEY, SERVER
 7. close the file by pressing ctrl + x
 8. press y (= saving yes) and press enter to save and exit 
 
