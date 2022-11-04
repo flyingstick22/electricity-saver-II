@@ -46,7 +46,7 @@ Then comes a path to your Python installation. This you will find by typing: ```
 
 ## Summary
 
-This project was deployed using GCP. A cloud service comes with a cost but selecting smallest virtual machine available costs should stay under 10 € / month. Google is giving three months free tier (300 $) so testing the system should not generate any costs. Second. Controlling your electrical loads via (two) clouds is exposing your system for cyber attacks comparing local machine running in the local network. If you want to go more secure go for electricity-saver-I approach. Evaluate possible risks in your case and make the call.
+This project was deployed using GCP. A cloud service comes with a cost but selecting smallest virtual machine available costs should stay under 10 € / month. Google is giving three months free tier (300 $) so testing the system should not generate any costs. Second. Controlling your electrical loads via (two) clouds is exposing your system for cyber attacks comparing local machine running in the local network. If you want to go more secure go for [electricity-saver-I](https://github.com/flyingstick22/electricity-saver-I). Evaluate possible risks in your case and make the call.
 
 That's it. Happy scripting!
 
