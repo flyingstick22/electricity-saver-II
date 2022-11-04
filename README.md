@@ -20,7 +20,7 @@ In this demo, we are using [Shelly pro 4PM](https://www.shelly.cloud/knowledge-b
 ## Deploying script to Google Cloud Platform (GCP)
 Check [this](https://www.youtube.com/watch?v=lIJlhKrP_SI) tutorial from Algovibes how to run Python in GCP environment. As soon as your Linux Debian virtual machine is installed with Miniconda environment: 
 
-5. open nano text editor by typing command line: ```` nano my_spot_script.py ````
+5. open "nano" text editor by typing command line: ```` nano my_spot_script.py ````
 6. copy the python script from the repository and paste it to nano editor
 7. modify following parameters in the script based on your device: DEVICE_ID, CLOUD_KEY, SERVER
 7. close the file by pressing ctrl + x
@@ -28,13 +28,13 @@ Check [this](https://www.youtube.com/watch?v=lIJlhKrP_SI) tutorial from Algovibe
 
 Test that your script is working by typing command line: ```` python my_spot_script.py ````
 
-You should see something like this: ````29-10-2022,08:54,*your_device_id*,True,0.0161,0.2,True```` which is a log file we are going to save for the future use. It contains following information: date, UTC time, device ID, Shelly cloud connection is OK (true/false), hour price in kWh with taxes, my limit price in kWh, relay is ON (true/false)?
+You should see something like this: ````29-10-2022,08:54,*your_device_id*,True,0.0161,0.2,True```` which is a log file we are going to save for the future use. It contains following information: date, UTC time, device ID, Shelly is online (true/false), hour price in kWh with taxes, my limit price in kWh, relay is ON (true/false)?
 
 Great. If you see the output above we are almost there :thumbsup:
 
 ### Script automatization with Crontab
 
-[Crontab](https://www.adminschoice.com/crontab-quick-reference) is a file that allows script automatization in Linux environment. This is a great feature in projects like this because we must run the script at least once per hour and check if current electricity price is lower than our limit price. In addition, it also allows to save logs to a text file. Look [this](https://www.youtube.com/watch?v=kjrC1N8K8MI) tutorial from Algovibes how to use and automate your script using "Crontab". 
+[Crontab](https://www.adminschoice.com/crontab-quick-reference) is a file that allows script automatization in Linux environment. This is a great feature in projects like this because we must run the script at least once per hour and check if current electricity price is lower than our limit price. In addition, it also allows to save logs to a text file. Look [this](https://www.youtube.com/watch?v=kjrC1N8K8MI) tutorial from Algovibes how to automate your script using "Crontab". 
 
 If you want to run the script *on the hour* (15:00, 16:00, 17:00 ... and so on) use following syntax:<br>
 
@@ -46,7 +46,7 @@ Then comes a path to your Python installation. This you will find by typing: ```
 
 ## Summary
 
-This project was deployed in GCP. Using a cloud service comes with a cost but selecting smallest virtual machine available costs should stay under 10 € / month. Google is giving three months free tier (300 $) so testing the system should not generate any costs. Second. Controlling your electrical loads via (two) clouds is exposing your system more for possible cyber attacks comparing local machine running in the local network. If you want to go more secure go for electricity-saver-I approach. Evaluate risks in your case and make the call.
+This project was deployed using GCP. A cloud service comes with a cost but selecting smallest virtual machine available costs should stay under 10 € / month. Google is giving three months free tier (300 $) so testing the system should not generate any costs. Second. Controlling your electrical loads via (two) clouds is exposing your system for cyber attacks comparing local machine running in the local network. If you want to go more secure go for electricity-saver-I approach. Evaluate possible risks in your case and make the call.
 
 That's it. Happy scripting!
 
